@@ -4,15 +4,24 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { GlobalService } from './global.service';
 import { AppComponent } from './app.component';
-
+import { RouterModule, Routes } from '@angular/router';
+import { ListComponent } from './list.component';
+const appRoutes: Routes = [
+  { path: 'list', component: ListComponent },
+  { path: '',
+    redirectTo: '/app',
+    pathMatch: 'full'
+  },
+  { path: 'app', component: AppComponent }];
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, ListComponent ],
   providers: [ GlobalService ],
   bootstrap:    [ AppComponent ]
 })

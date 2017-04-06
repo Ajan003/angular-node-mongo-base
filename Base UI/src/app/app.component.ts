@@ -1,17 +1,16 @@
 import { Component } from '@angular/core';
 import { GlobalService } from './global.service';
+import { ListComponent } from './list.component';
+import { RouterModule, Routes } from '@angular/router';
 @Component({
   selector: 'my-app',
-  template: `<h1>List of Employees</h1>
-  <ul><li *ngFor="let employee of employees; let i = index; trackBy: trackByFn">{{employee.name}}</li></ul>`,
+  template: `<nav>
+    <a routerLink="/list" routerLinkActive="active">List</a>
+    <a routerLink="/search" routerLinkActive="active">Search</a>
+  </nav>
+  <router-outlet></router-outlet>`,
+  directive: [ListComponent]
 })
 export class AppComponent implements OnInit{ 
 constructor(private globalService: GlobalService){}
-name = 'Angular'; 
-public employees = [];
-ngOnInit() {
-	    this.globalService.getList()
-                     .subscribe(
-                       res => this.employees = res);
-	}
 }

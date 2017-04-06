@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GlobalService } from './global.service';
 @Component({
   selector: 'my-app',
@@ -8,7 +8,7 @@ import { GlobalService } from './global.service';
 export class ListComponent implements OnInit{ 
 constructor(private globalService: GlobalService){}
 name = 'Angular'; 
-public employees = [];
+public employees: any = [];
 ngOnInit() {
 	    this.globalService.getList()
                      .subscribe(

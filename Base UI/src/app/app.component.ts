@@ -8,8 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
     <a routerLink="/list" routerLinkActive="active">List</a>
     <a routerLink="/search" routerLinkActive="active">Search</a>
   </nav>
-  <router-outlet></router-outlet>`,
-  directive: [ListComponent]
+  <router-outlet></router-outlet>`
 })
 export class AppComponent { 
 constructor(private globalService: GlobalService){}

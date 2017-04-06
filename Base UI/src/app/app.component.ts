@@ -11,6 +11,6 @@ import { RouterModule, Routes } from '@angular/router';
   <router-outlet></router-outlet>`,
   directive: [ListComponent]
 })
-export class AppComponent implements OnInit{ 
+export class AppComponent { 
 constructor(private globalService: GlobalService){}
 }

@@ -9,10 +9,9 @@ import { ListComponent } from './list.component';
 const appRoutes: Routes = [
   { path: 'list', component: ListComponent },
   { path: '',
-    redirectTo: '/app',
+    redirectTo: 'list',
     pathMatch: 'full'
-  },
-  { path: 'app', component: AppComponent }];
+  }];
 @NgModule({
   imports: [
     BrowserModule,
